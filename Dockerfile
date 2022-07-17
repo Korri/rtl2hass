@@ -68,7 +68,8 @@ COPY rtl.blacklist.conf /etc/modprobe.d/rtl.blacklist.conf
 #
 # Copy scripts, make executable
 #
-COPY entry.sh rtl_433_mqtt_hass.py /scripts/
+COPY entry.sh /scripts/
+RUN wget https://raw.githubusercontent.com/merbanan/rtl_433/master/examples/rtl_433_mqtt_hass.py -O scripts/rtl_433_mqtt_hass.py
 RUN chmod +x /scripts/entry.sh
 
 #
